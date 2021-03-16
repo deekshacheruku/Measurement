@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="quantity.QuantityTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-03-16T09:18:54" hostname="DEEKSHAREDDY" time="0.057">
+  <properties/>
+  <testcase name="testIs1CentimeterNotEquals2Centimeter()" classname="quantity.QuantityTest" time="0.051"/>
+  <testcase name="testIs1CentimeterEquals1Centimeter()" classname="quantity.QuantityTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
