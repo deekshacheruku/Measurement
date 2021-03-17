@@ -1,5 +1,7 @@
 package quantity;
 
 public enum QuantityType {
-    CENTIMETER;
+    CENTIMETER,
+    METER,
+    KILOMETER;
 }

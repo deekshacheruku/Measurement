@@ -1,6 +1,6 @@
-quantity/QuantityType.java
- quantity.QuantityType
 quantity/InValidQuantityValueException.java
  quantity.InValidQuantityValueException
+quantity/QuantityType.java
+ quantity.QuantityType
 quantity/Quantity.java
  quantity.Quantity
