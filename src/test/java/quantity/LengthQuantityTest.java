@@ -115,10 +115,10 @@ public class LengthQuantityTest {
     void testIfSubtractionOf1MeterAnd50CentimeterEquals0_5Meter() throws InValidQuantityValueException, NegativeSubtractionException {
         LengthQuantity _1Meter = new LengthQuantity(1, LengthType.METER);
         LengthQuantity _0_5Centimeter = new LengthQuantity(50, LengthType.CENTIMETER);
-        LengthQuantity expectedSum = new LengthQuantity(0.5, LengthType.METER);
+        LengthQuantity expectedDifference = new LengthQuantity(0.5, LengthType.METER);
 
-        LengthQuantity actualSum = _1Meter.subtract(_0_5Centimeter);
-        boolean actualResult = actualSum.equals(expectedSum);
+        LengthQuantity actualDifference = _1Meter.subtract(_0_5Centimeter);
+        boolean actualResult = actualDifference.equals(expectedDifference);
 
         assertTrue(actualResult);
     }
@@ -127,10 +127,10 @@ public class LengthQuantityTest {
     void testIfSubtractionOf2000CentimeterAnd1MeterEquals19Meter() throws InValidQuantityValueException, NegativeSubtractionException {
         LengthQuantity _2000Centimeter = new LengthQuantity(2000, LengthType.CENTIMETER);
         LengthQuantity _1Meter = new LengthQuantity(1, LengthType.METER);
-        LengthQuantity expectedSum = new LengthQuantity(19, LengthType.METER);
+        LengthQuantity expectedDifference = new LengthQuantity(19, LengthType.METER);
 
-        LengthQuantity actualSum = _2000Centimeter.subtract(_1Meter);
-        boolean actualResult = actualSum.equals(expectedSum);
+        LengthQuantity actualDifference = _2000Centimeter.subtract(_1Meter);
+        boolean actualResult = actualDifference.equals(expectedDifference);
 
         assertTrue(actualResult);
     }
@@ -139,10 +139,10 @@ public class LengthQuantityTest {
     void testIfSubtractionOf3MeterAnd100CentimeterNotEquals1Meter() throws InValidQuantityValueException, NegativeSubtractionException {
         LengthQuantity _3Meter = new LengthQuantity(3, LengthType.METER);
         LengthQuantity _100Centimeter = new LengthQuantity(100, LengthType.CENTIMETER);
-        LengthQuantity expectedSum = new LengthQuantity(1, LengthType.METER);
+        LengthQuantity expectedDifference = new LengthQuantity(1, LengthType.METER);
 
-        LengthQuantity actualSum = _3Meter.subtract(_100Centimeter);
-        boolean actualResult = actualSum.equals(expectedSum);
+        LengthQuantity actualDifference = _3Meter.subtract(_100Centimeter);
+        boolean actualResult = actualDifference.equals(expectedDifference);
 
         assertFalse(actualResult);
     }

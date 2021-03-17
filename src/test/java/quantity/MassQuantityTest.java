@@ -68,4 +68,34 @@ public class MassQuantityTest {
 
         assertFalse(actualSum.equals(expectedSum));
     }
+
+    @Test
+    void testSubtractionOf1_5KiloGramsAnd500GramsEquals1000Grams() throws InValidQuantityValueException, NegativeSubtractionException {
+        MassQuantity _1_5Grams = new MassQuantity(1.5,MassType.KILOGRAM);
+        MassQuantity _500Grams = new MassQuantity(500,MassType.GRAM);
+        MassQuantity expectedDifference = new MassQuantity(1000,MassType.GRAM);
+
+        MassQuantity actualDifference = _1_5Grams.subtract(_500Grams);
+
+        assertTrue(actualDifference.equals(expectedDifference));
+    }
+
+    @Test
+    void testSubtractionOf1_5KiloGramsAnd500GramsNotEquals500Grams() throws InValidQuantityValueException, NegativeSubtractionException {
+        MassQuantity _1_5Grams = new MassQuantity(1.5,MassType.KILOGRAM);
+        MassQuantity _500Grams = new MassQuantity(500,MassType.GRAM);
+        MassQuantity expectedDifference = new MassQuantity(500,MassType.GRAM);
+
+        MassQuantity actualDifference = _1_5Grams.subtract(_500Grams);
+
+        assertFalse(actualDifference.equals(expectedDifference));
+    }
+
+    @Test
+    void testThrowsExceptionIfGreaterQuantitySubtractedFromSmallerQuantity() throws InValidQuantityValueException {
+        MassQuantity largerQuantity =  new MassQuantity(2, MassType.KILOGRAM);
+        MassQuantity smallerQuantity =  new MassQuantity(1, MassType.GRAM);
+
+        assertThrows(NegativeSubtractionException.class, () -> smallerQuantity.subtract(largerQuantity));
+    }
 }

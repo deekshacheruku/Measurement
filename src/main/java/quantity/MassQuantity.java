@@ -29,4 +29,13 @@ public class MassQuantity {
         double valueInGram = convertQuantityValueInToGrams(this) + convertQuantityValueInToGrams(quantity);
         return new MassQuantity(valueInGram, MassType.GRAM);
     }
+
+    public MassQuantity subtract(MassQuantity quantity) throws InValidQuantityValueException, NegativeSubtractionException {
+        double firstQuantity = convertQuantityValueInToGrams(this);
+        double secondQuantity = convertQuantityValueInToGrams(quantity);
+        if(firstQuantity < secondQuantity)
+            throw  new NegativeSubtractionException("Larger Quantity Value can't be subtracted from Smaller Quantity");
+        double valueInGram =  firstQuantity - secondQuantity;
+        return  new MassQuantity(valueInGram,MassType.GRAM);
+    }
 }
