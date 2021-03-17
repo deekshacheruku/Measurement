@@ -21,7 +21,7 @@ public class MassQuantity {
 
     private double convertQuantityValueInToGrams(MassQuantity quantity) {
         if(quantity.massName.name().equals("KILOGRAM"))
-            return quantity.value /1000;
+            return quantity.value * 1000;
         return quantity.value;
     }
 }

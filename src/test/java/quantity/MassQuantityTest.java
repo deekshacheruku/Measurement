@@ -30,4 +30,20 @@ public class MassQuantityTest {
     void testExceptionIfMassValueIsNegative() {
         assertThrows(InValidQuantityValueException.class, () -> new MassQuantity(-2,MassType.GRAM));
     }
+
+    @Test
+    void test0_1KiloGramsEquals100Grams() throws InValidQuantityValueException {
+        MassQuantity _0_1KiloGrams = new MassQuantity(0.1,MassType.KILOGRAM);
+        MassQuantity _100Grams = new MassQuantity(100,MassType.GRAM);
+
+        assertTrue(_0_1KiloGrams.equals(_100Grams));
+    }
+
+    @Test
+    void test100KiloGramsNotEquals1Grams() throws InValidQuantityValueException {
+        MassQuantity _100KiloGrams = new MassQuantity(100,MassType.KILOGRAM);
+        MassQuantity _1Grams = new MassQuantity(1,MassType.GRAM);
+
+        assertFalse(_100KiloGrams.equals(_1Grams));
+    }
 }
