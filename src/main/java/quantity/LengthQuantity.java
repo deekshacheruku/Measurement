@@ -1,6 +1,6 @@
 package quantity;
 
-public class LengthQuantity {
+public class LengthQuantity implements Quantity {
     private double value;
     private LengthType lengthName;
 
@@ -28,17 +28,17 @@ public class LengthQuantity {
         return quantity.value;
     }
 
-    public LengthQuantity add(LengthQuantity quantity) throws InValidQuantityValueException {
-        double valueInMeter = convertQuantityValueInToMeters(this) + convertQuantityValueInToMeters(quantity);
+    public LengthQuantity add(Object quantity) throws InValidQuantityValueException {
+        double valueInMeter = convertQuantityValueInToMeters(this) + convertQuantityValueInToMeters((LengthQuantity) quantity);
         return new LengthQuantity(valueInMeter, LengthType.METER);
     }
 
-    public LengthQuantity subtract(LengthQuantity quantity) throws InValidQuantityValueException, NegativeSubtractionException {
+    public LengthQuantity subtract(Object quantity) throws InValidQuantityValueException, NegativeSubtractionException {
         double firstQuantity = convertQuantityValueInToMeters(this);
-        double secondQuantity = convertQuantityValueInToMeters(quantity);
-        if(firstQuantity < secondQuantity)
-            throw  new NegativeSubtractionException("Larger Quantity Value can't be subtracted from Smaller Quantity");
-        double valueInMeter =  firstQuantity - secondQuantity;
+        double secondQuantity = convertQuantityValueInToMeters((LengthQuantity) quantity);
+        if (firstQuantity < secondQuantity)
+            throw new NegativeSubtractionException("Larger Quantity Value can't be subtracted from Smaller Quantity");
+        double valueInMeter = firstQuantity - secondQuantity;
         return new LengthQuantity(valueInMeter, LengthType.METER);
     }
 

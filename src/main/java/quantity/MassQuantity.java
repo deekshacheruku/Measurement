@@ -1,11 +1,11 @@
 package quantity;
 
-public class MassQuantity {
+public class MassQuantity implements Quantity {
     private double value;
     private MassType massName;
 
     public MassQuantity(double value, MassType massName) throws InValidQuantityValueException {
-        if(value <= 0)
+        if (value <= 0)
             throw new InValidQuantityValueException("Mass Quantity doesn't support Zero or Negative Values");
         this.value = value;
         this.massName = massName;
@@ -20,22 +20,22 @@ public class MassQuantity {
     }
 
     private double convertQuantityValueInToGrams(MassQuantity quantity) {
-        if(quantity.massName.name().equals("KILOGRAM"))
+        if (quantity.massName.name().equals("KILOGRAM"))
             return quantity.value * 1000;
         return quantity.value;
     }
 
-    public MassQuantity add(MassQuantity quantity) throws InValidQuantityValueException {
-        double valueInGram = convertQuantityValueInToGrams(this) + convertQuantityValueInToGrams(quantity);
+    public MassQuantity add(Object quantity) throws InValidQuantityValueException {
+        double valueInGram = convertQuantityValueInToGrams(this) + convertQuantityValueInToGrams((MassQuantity) quantity);
         return new MassQuantity(valueInGram, MassType.GRAM);
     }
 
-    public MassQuantity subtract(MassQuantity quantity) throws InValidQuantityValueException, NegativeSubtractionException {
+    public MassQuantity subtract(Object quantity) throws InValidQuantityValueException, NegativeSubtractionException {
         double firstQuantity = convertQuantityValueInToGrams(this);
-        double secondQuantity = convertQuantityValueInToGrams(quantity);
-        if(firstQuantity < secondQuantity)
-            throw  new NegativeSubtractionException("Larger Quantity Value can't be subtracted from Smaller Quantity");
-        double valueInGram =  firstQuantity - secondQuantity;
-        return  new MassQuantity(valueInGram,MassType.GRAM);
+        double secondQuantity = convertQuantityValueInToGrams((MassQuantity) quantity);
+        if (firstQuantity < secondQuantity)
+            throw new NegativeSubtractionException("Larger Quantity Value can't be subtracted from Smaller Quantity");
+        double valueInGram = firstQuantity - secondQuantity;
+        return new MassQuantity(valueInGram, MassType.GRAM);
     }
 }

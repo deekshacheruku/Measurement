@@ -149,8 +149,8 @@ public class LengthQuantityTest {
 
     @Test
     void testThrowsExceptionIfGreaterQuantitySubtractedFromSmallerQuantity() throws InValidQuantityValueException {
-        LengthQuantity largerQuantity =  new LengthQuantity(2, LengthType.KILOMETER);
-        LengthQuantity smallerQuantity =  new LengthQuantity(1, LengthType.METER);
+        LengthQuantity largerQuantity = new LengthQuantity(2, LengthType.KILOMETER);
+        LengthQuantity smallerQuantity = new LengthQuantity(1, LengthType.METER);
 
         assertThrows(NegativeSubtractionException.class, () -> smallerQuantity.subtract(largerQuantity));
     }

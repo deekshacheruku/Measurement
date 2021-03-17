@@ -4,9 +4,11 @@ quantity/NegativeSubtractionException.java
  quantity.NegativeSubtractionException
 quantity/LengthType.java
  quantity.LengthType
-quantity/LengthQuantity.java
- quantity.LengthQuantity
+quantity/Quantity.java
+ quantity.Quantity
 quantity/MassType.java
  quantity.MassType
+quantity/LengthQuantity.java
+ quantity.LengthQuantity
 quantity/MassQuantity.java
  quantity.MassQuantity
