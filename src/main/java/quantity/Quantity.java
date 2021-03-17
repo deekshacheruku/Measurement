@@ -11,6 +11,16 @@ public class Quantity {
         this.quantityName = quantityName;
     }
 
+    public Quantity add(Quantity quantity, QuantityType expectedQuantityType) throws InValidQuantityValueException{
+        double valueInMeter = convertQuantityValueInToMeters(this) + convertQuantityValueInToMeters(quantity);
+        if (expectedQuantityType.name().equals("METER"))
+            return new Quantity(valueInMeter, QuantityType.METER);
+        else if (expectedQuantityType.name().equals("CENTIMETER"))
+            return new Quantity(valueInMeter * 100, QuantityType.CENTIMETER);
+        else
+            return new Quantity(valueInMeter / 1000, QuantityType.KILOMETER);
+    }
+
     private double convertQuantityValueInToMeters(Quantity quantity) {
         if (quantity.quantityName.name().equals("CENTIMETER"))
             return quantity.value / 100;

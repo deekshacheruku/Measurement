@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="quantity.QuantityTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-03-17T05:55:22" hostname="DEEKSHAREDDY" time="0.11">
+<testsuite name="quantity.QuantityTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2021-03-17T06:35:23" hostname="DEEKSHAREDDY" time="0.12">
   <properties/>
   <testcase name="testIf1MeterEquals100Centimeter()" classname="quantity.QuantityTest" time="0.059"/>
-  <testcase name="testThrowsExceptionWhenQuantityValueIsNegative()" classname="quantity.QuantityTest" time="0.007"/>
-  <testcase name="testThrowsExceptionWhenQuantityValueIsZero()" classname="quantity.QuantityTest" time="0.003"/>
-  <testcase name="testIf2MetersNotEquals100Centimeter()" classname="quantity.QuantityTest" time="0.003"/>
-  <testcase name="test1000CentimeterNotEquals0_001Kilometer()" classname="quantity.QuantityTest" time="0.011"/>
+  <testcase name="testThrowsExceptionWhenQuantityValueIsNegative()" classname="quantity.QuantityTest" time="0.009"/>
+  <testcase name="testThrowsExceptionWhenQuantityValueIsZero()" classname="quantity.QuantityTest" time="0.002"/>
+  <testcase name="testIfAdditionOf1MeterAnd100CentimeterNotEquals1Meter()" classname="quantity.QuantityTest" time="0.003"/>
+  <testcase name="testIfAdditionOf1MeterAnd100CentimeterEquals2Meter()" classname="quantity.QuantityTest" time="0.002"/>
+  <testcase name="testIf2MetersNotEquals100Centimeter()" classname="quantity.QuantityTest" time="0.002"/>
+  <testcase name="test1000CentimeterNotEquals0_001Kilometer()" classname="quantity.QuantityTest" time="0.002"/>
+  <testcase name="testIfAdditionOf200CentimeterAnd1KilometerEquals100200Centimeter()" classname="quantity.QuantityTest" time="0.005"/>
   <testcase name="testIs1CentimeterNotEquals2Centimeter()" classname="quantity.QuantityTest" time="0.002"/>
-  <testcase name="test100CentimeterEquals0_001Kilometer()" classname="quantity.QuantityTest" time="0.004"/>
-  <testcase name="testIs1CentimeterEquals1Centimeter()" classname="quantity.QuantityTest" time="0.002"/>
+  <testcase name="test100CentimeterEquals0_001Kilometer()" classname="quantity.QuantityTest" time="0.001"/>
+  <testcase name="testIs1CentimeterEquals1Centimeter()" classname="quantity.QuantityTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
