@@ -46,4 +46,26 @@ public class MassQuantityTest {
 
         assertFalse(_100KiloGrams.equals(_1Grams));
     }
+
+    @Test
+    void testAdditionOf10GramsAnd1KiloGramsEquals1010Grams() throws InValidQuantityValueException {
+        MassQuantity _10Grams = new MassQuantity(10,MassType.GRAM);
+        MassQuantity _1KiloGrams = new MassQuantity(1,MassType.KILOGRAM);
+        MassQuantity expectedSum = new MassQuantity(1010,MassType.GRAM);
+
+        MassQuantity actualSum = _10Grams.add(_1KiloGrams);
+
+        assertTrue(actualSum.equals(expectedSum));
+    }
+
+    @Test
+    void testAdditionOf1GramsAnd1KiloGramsNotEquals2Grams() throws InValidQuantityValueException {
+        MassQuantity _1Grams = new MassQuantity(1,MassType.GRAM);
+        MassQuantity _1KiloGrams = new MassQuantity(1,MassType.KILOGRAM);
+        MassQuantity expectedSum = new MassQuantity(2,MassType.GRAM);
+
+        MassQuantity actualSum = _1Grams.add(_1KiloGrams);
+
+        assertFalse(actualSum.equals(expectedSum));
+    }
 }

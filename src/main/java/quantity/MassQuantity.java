@@ -24,4 +24,9 @@ public class MassQuantity {
             return quantity.value * 1000;
         return quantity.value;
     }
+
+    public MassQuantity add(MassQuantity quantity) throws InValidQuantityValueException {
+        double valueInGram = convertQuantityValueInToGrams(this) + convertQuantityValueInToGrams(quantity);
+        return new MassQuantity(valueInGram, MassType.GRAM);
+    }
 }
