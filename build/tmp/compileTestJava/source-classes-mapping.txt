@@ -1,2 +1,4 @@
-quantity/QuantityTest.java
- quantity.QuantityTest
+quantity/LengthQuantityTest.java
+ quantity.LengthQuantityTest
+quantity/MassQuantityTest.java
+ quantity.MassQuantityTest

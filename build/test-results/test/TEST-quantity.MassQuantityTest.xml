@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="quantity.MassQuantityTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-03-17T11:44:10" hostname="DEEKSHAREDDY" time="0.061">
+  <properties/>
+  <testcase name="testIf1GramNotEquals2Gram()" classname="quantity.MassQuantityTest" time="0.047"/>
+  <testcase name="testIs1GramEquals1Gram()" classname="quantity.MassQuantityTest" time="0.002"/>
+  <testcase name="testExceptionIfMassValueIsZero()" classname="quantity.MassQuantityTest" time="0.004"/>
+  <testcase name="testExceptionIfMassValueIsNegative()" classname="quantity.MassQuantityTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,8 +1,12 @@
 quantity/InValidQuantityValueException.java
  quantity.InValidQuantityValueException
-quantity/QuantityType.java
- quantity.QuantityType
 quantity/NegativeSubtractionException.java
  quantity.NegativeSubtractionException
-quantity/Quantity.java
- quantity.Quantity
+quantity/LengthType.java
+ quantity.LengthType
+quantity/MassQuantity.java
+ quantity.MassQuantity
+quantity/MassType.java
+ quantity.MassType
+quantity/LengthQuantity.java
+ quantity.LengthQuantity
