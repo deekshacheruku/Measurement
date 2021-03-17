@@ -2,5 +2,7 @@ quantity/InValidQuantityValueException.java
  quantity.InValidQuantityValueException
 quantity/QuantityType.java
  quantity.QuantityType
+quantity/NegativeSubtractionException.java
+ quantity.NegativeSubtractionException
 quantity/Quantity.java
  quantity.Quantity

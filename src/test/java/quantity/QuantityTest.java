@@ -77,73 +77,81 @@ public class QuantityTest {
 
     @Test
     void testIfAdditionOf1MeterAnd100CentimeterEquals2Meter() throws InValidQuantityValueException {
-        Quantity quantityInMeter = new Quantity(1, QuantityType.METER);
-        Quantity quantityInCentimeter = new Quantity(100, QuantityType.CENTIMETER);
-        Quantity expectedQuantityInMeter = new Quantity(2, QuantityType.METER);
+        Quantity _1Meter = new Quantity(1, QuantityType.METER);
+        Quantity _100Centimeter = new Quantity(100, QuantityType.CENTIMETER);
+        Quantity expectedSum = new Quantity(2, QuantityType.METER);
 
-        Quantity actualQuantityInMeter = quantityInMeter.add(quantityInCentimeter, QuantityType.METER);
-        boolean actualResult = actualQuantityInMeter.equals(expectedQuantityInMeter);
+        Quantity actualSum = _1Meter.add(_100Centimeter);
+        boolean actualResult = actualSum.equals(expectedSum);
 
         assertTrue(actualResult);
     }
 
     @Test
-    void testIfAdditionOf200CentimeterAnd1KilometerEquals100200Centimeter() throws InValidQuantityValueException {
-        Quantity quantityInCentimeter = new Quantity(200, QuantityType.CENTIMETER);
-        Quantity quantityInKilometer = new Quantity(1, QuantityType.KILOMETER);
-        Quantity expectedQuantityInCentimeter = new Quantity(100200, QuantityType.CENTIMETER);
+    void testIfAdditionOf200CentimeterAnd1KilometerEquals1002Meter() throws InValidQuantityValueException {
+        Quantity _200Centimeter = new Quantity(200, QuantityType.CENTIMETER);
+        Quantity _1Kilometer = new Quantity(1, QuantityType.KILOMETER);
+        Quantity expectedSum = new Quantity(1002, QuantityType.METER);
 
-        Quantity actualQuantityInMeter = quantityInCentimeter.add(quantityInKilometer, QuantityType.CENTIMETER);
-        boolean actualResult = actualQuantityInMeter.equals(expectedQuantityInCentimeter);
+        Quantity actualSum = _200Centimeter.add(_1Kilometer);
+        boolean actualResult = actualSum.equals(expectedSum);
 
         assertTrue(actualResult);
     }
 
     @Test
     void testIfAdditionOf1MeterAnd100CentimeterNotEquals1Meter() throws InValidQuantityValueException {
-        Quantity quantityInMeter = new Quantity(1, QuantityType.METER);
-        Quantity quantityInCentimeter = new Quantity(100, QuantityType.CENTIMETER);
-        Quantity expectedQuantityInMeter = new Quantity(1, QuantityType.METER);
+        Quantity _1Meter = new Quantity(1, QuantityType.METER);
+        Quantity _100Centimeter = new Quantity(100, QuantityType.CENTIMETER);
+        Quantity expectedSum = new Quantity(1, QuantityType.METER);
 
-        Quantity actualQuantityInMeter = quantityInMeter.add(quantityInCentimeter, QuantityType.METER);
-        boolean actualResult = actualQuantityInMeter.equals(expectedQuantityInMeter);
+        Quantity actualSum = _1Meter.add(_100Centimeter);
+        boolean actualResult = actualSum.equals(expectedSum);
 
         assertFalse(actualResult);
     }
 
     @Test
-    void testIfSubtractionOf1MeterAnd50CentimeterEquals0_5Meter() throws InValidQuantityValueException {
-        Quantity quantityInMeter = new Quantity(1, QuantityType.METER);
-        Quantity quantityInCentimeter = new Quantity(50, QuantityType.CENTIMETER);
-        Quantity expectedQuantityInMeter = new Quantity(0.5, QuantityType.METER);
+    void testIfSubtractionOf1MeterAnd50CentimeterEquals0_5Meter() throws InValidQuantityValueException, NegativeSubtractionException {
+        Quantity _1Meter = new Quantity(1, QuantityType.METER);
+        Quantity _0_5Centimeter = new Quantity(50, QuantityType.CENTIMETER);
+        Quantity expectedSum = new Quantity(0.5, QuantityType.METER);
 
-        Quantity actualQuantityInMeter = quantityInMeter.subtract(quantityInCentimeter, QuantityType.METER);
-        boolean actualResult = actualQuantityInMeter.equals(expectedQuantityInMeter);
+        Quantity actualSum = _1Meter.subtract(_0_5Centimeter);
+        boolean actualResult = actualSum.equals(expectedSum);
 
         assertTrue(actualResult);
     }
 
     @Test
-    void testIfSubtractionOf2000CentimeterAnd1MeterEquals1900Centimeter() throws InValidQuantityValueException {
-        Quantity quantityInCentimeter = new Quantity(2000, QuantityType.CENTIMETER);
-        Quantity quantityInMeter = new Quantity(1, QuantityType.METER);
-        Quantity expectedQuantityInCentimeter = new Quantity(1900, QuantityType.CENTIMETER);
+    void testIfSubtractionOf2000CentimeterAnd1MeterEquals19Meter() throws InValidQuantityValueException, NegativeSubtractionException {
+        Quantity _2000Centimeter = new Quantity(2000, QuantityType.CENTIMETER);
+        Quantity _1Meter = new Quantity(1, QuantityType.METER);
+        Quantity expectedSum = new Quantity(19, QuantityType.METER);
 
-        Quantity actualQuantityInMeter = quantityInCentimeter.subtract(quantityInMeter, QuantityType.CENTIMETER);
-        boolean actualResult = actualQuantityInMeter.equals(expectedQuantityInCentimeter);
+        Quantity actualSum = _2000Centimeter.subtract(_1Meter);
+        boolean actualResult = actualSum.equals(expectedSum);
 
         assertTrue(actualResult);
     }
 
     @Test
-    void testIfSubtractionOf3MeterAnd100CentimeterNotEquals1Meter() throws InValidQuantityValueException {
-        Quantity quantityInMeter = new Quantity(3, QuantityType.METER);
-        Quantity quantityInCentimeter = new Quantity(100, QuantityType.CENTIMETER);
-        Quantity expectedQuantityInMeter = new Quantity(1, QuantityType.METER);
+    void testIfSubtractionOf3MeterAnd100CentimeterNotEquals1Meter() throws InValidQuantityValueException, NegativeSubtractionException {
+        Quantity _3Meter = new Quantity(3, QuantityType.METER);
+        Quantity _100Centimeter = new Quantity(100, QuantityType.CENTIMETER);
+        Quantity expectedSum = new Quantity(1, QuantityType.METER);
 
-        Quantity actualQuantityInMeter = quantityInMeter.subtract(quantityInCentimeter, QuantityType.METER);
-        boolean actualResult = actualQuantityInMeter.equals(expectedQuantityInMeter);
+        Quantity actualSum = _3Meter.subtract(_100Centimeter);
+        boolean actualResult = actualSum.equals(expectedSum);
 
         assertFalse(actualResult);
+    }
+
+    @Test
+    void testThrowsExceptionIfGreaterQuantitySubtractedFromSmallerQuantity() throws InValidQuantityValueException {
+        Quantity largerQuantity =  new Quantity(2,QuantityType.KILOMETER);
+        Quantity smallerQuantity =  new Quantity(1,QuantityType.METER);
+
+        assertThrows(NegativeSubtractionException.class, () -> smallerQuantity.subtract(largerQuantity));
     }
 }

@@ -11,18 +11,13 @@ public class Quantity {
         this.quantityName = quantityName;
     }
 
-    private Quantity convertIntoExpectedQuantityType(QuantityType expectedQuantityType, double valueInMeter) throws InValidQuantityValueException {
+    public Quantity convertIntoExpectedQuantityType(QuantityType expectedQuantityType, double valueInMeter) throws InValidQuantityValueException {
         if (expectedQuantityType.name().equals("METER"))
             return new Quantity(valueInMeter, QuantityType.METER);
         else if (expectedQuantityType.name().equals("CENTIMETER"))
             return new Quantity(valueInMeter * 100, QuantityType.CENTIMETER);
         else
             return new Quantity(valueInMeter / 1000, QuantityType.KILOMETER);
-    }
-
-    public Quantity add(Quantity quantity, QuantityType expectedQuantityType) throws InValidQuantityValueException {
-        double valueInMeter = convertQuantityValueInToMeters(this) + convertQuantityValueInToMeters(quantity);
-        return convertIntoExpectedQuantityType(expectedQuantityType, valueInMeter);
     }
 
     private double convertQuantityValueInToMeters(Quantity quantity) {
@@ -33,16 +28,25 @@ public class Quantity {
         return quantity.value;
     }
 
+    public Quantity add(Quantity quantity) throws InValidQuantityValueException {
+        double valueInMeter = convertQuantityValueInToMeters(this) + convertQuantityValueInToMeters(quantity);
+        return new Quantity(valueInMeter,QuantityType.METER);
+    }
+
+    public Quantity subtract(Quantity quantity) throws InValidQuantityValueException, NegativeSubtractionException {
+        double firstQuantity = convertQuantityValueInToMeters(this);
+        double secondQuantity = convertQuantityValueInToMeters(quantity);
+        if(firstQuantity < secondQuantity)
+            throw  new NegativeSubtractionException("Larger Quantity Value can't be subtracted from Smaller Quantity");
+        double valueInMeter =  firstQuantity - secondQuantity;
+        return new Quantity(valueInMeter,QuantityType.METER);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Quantity quantity = (Quantity) o;
         return convertQuantityValueInToMeters(quantity) == convertQuantityValueInToMeters(this);
-    }
-
-    public Quantity subtract(Quantity quantity, QuantityType expectedQuantityType) throws InValidQuantityValueException {
-        double valueInMeter = convertQuantityValueInToMeters(this) - convertQuantityValueInToMeters(quantity);
-        return convertIntoExpectedQuantityType(expectedQuantityType, valueInMeter);
     }
 }

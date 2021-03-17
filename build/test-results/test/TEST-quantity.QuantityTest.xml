@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="quantity.QuantityTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2021-03-17T06:45:56" hostname="DEEKSHAREDDY" time="0.12">
+<testsuite name="quantity.QuantityTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2021-03-17T10:56:41" hostname="DEEKSHAREDDY" time="0.273">
   <properties/>
-  <testcase name="testIf1MeterEquals100Centimeter()" classname="quantity.QuantityTest" time="0.042"/>
+  <testcase name="testIf1MeterEquals100Centimeter()" classname="quantity.QuantityTest" time="0.055"/>
   <testcase name="testThrowsExceptionWhenQuantityValueIsNegative()" classname="quantity.QuantityTest" time="0.007"/>
-  <testcase name="testThrowsExceptionWhenQuantityValueIsZero()" classname="quantity.QuantityTest" time="0.011"/>
-  <testcase name="testIfAdditionOf1MeterAnd100CentimeterNotEquals1Meter()" classname="quantity.QuantityTest" time="0.005"/>
-  <testcase name="testIfAdditionOf1MeterAnd100CentimeterEquals2Meter()" classname="quantity.QuantityTest" time="0.001"/>
-  <testcase name="testIf2MetersNotEquals100Centimeter()" classname="quantity.QuantityTest" time="0.001"/>
-  <testcase name="test1000CentimeterNotEquals0_001Kilometer()" classname="quantity.QuantityTest" time="0.001"/>
-  <testcase name="testIfAdditionOf200CentimeterAnd1KilometerEquals100200Centimeter()" classname="quantity.QuantityTest" time="0.002"/>
-  <testcase name="testIs1CentimeterNotEquals2Centimeter()" classname="quantity.QuantityTest" time="0.002"/>
-  <testcase name="test100CentimeterEquals0_001Kilometer()" classname="quantity.QuantityTest" time="0.001"/>
-  <testcase name="testIs1CentimeterEquals1Centimeter()" classname="quantity.QuantityTest" time="0.003"/>
-  <testcase name="testIfSubtractionOf3MeterAnd100CentimeterNotEquals1Meter()" classname="quantity.QuantityTest" time="0.005"/>
-  <testcase name="testIfSubtractionOf2000CentimeterAnd1MeterEquals1900Centimeter()" classname="quantity.QuantityTest" time="0.001"/>
-  <testcase name="testIfSubtractionOf1MeterAnd50CentimeterEquals0_5Meter()" classname="quantity.QuantityTest" time="0.001"/>
+  <testcase name="testThrowsExceptionWhenQuantityValueIsZero()" classname="quantity.QuantityTest" time="0.004"/>
+  <testcase name="testIfAdditionOf1MeterAnd100CentimeterNotEquals1Meter()" classname="quantity.QuantityTest" time="0.004"/>
+  <testcase name="testIfAdditionOf1MeterAnd100CentimeterEquals2Meter()" classname="quantity.QuantityTest" time="0.006"/>
+  <testcase name="testThrowsExceptionIfGreaterQuantitySubtractedFromSmallerQuantity()" classname="quantity.QuantityTest" time="0.01"/>
+  <testcase name="testIf2MetersNotEquals100Centimeter()" classname="quantity.QuantityTest" time="0.005"/>
+  <testcase name="test1000CentimeterNotEquals0_001Kilometer()" classname="quantity.QuantityTest" time="0.01"/>
+  <testcase name="testIfAdditionOf200CentimeterAnd1KilometerEquals1002Meter()" classname="quantity.QuantityTest" time="0.01"/>
+  <testcase name="testIs1CentimeterNotEquals2Centimeter()" classname="quantity.QuantityTest" time="0.003"/>
+  <testcase name="test100CentimeterEquals0_001Kilometer()" classname="quantity.QuantityTest" time="0.002"/>
+  <testcase name="testIs1CentimeterEquals1Centimeter()" classname="quantity.QuantityTest" time="0.002"/>
+  <testcase name="testIfSubtractionOf3MeterAnd100CentimeterNotEquals1Meter()" classname="quantity.QuantityTest" time="0.002"/>
+  <testcase name="testIfSubtractionOf2000CentimeterAnd1MeterEquals19Meter()" classname="quantity.QuantityTest" time="0.002"/>
+  <testcase name="testIfSubtractionOf1MeterAnd50CentimeterEquals0_5Meter()" classname="quantity.QuantityTest" time="0.061"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
