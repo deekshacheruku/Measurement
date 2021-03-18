@@ -22,8 +22,6 @@ public class Temperature {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Temperature temperature = (Temperature) o;
-        System.out.println(convertTemperatureValueIntoCelsius(this));
-        System.out.println(convertTemperatureValueIntoCelsius(temperature));
         return convertTemperatureValueIntoCelsius(this) == convertTemperatureValueIntoCelsius(temperature);
     }
 }
