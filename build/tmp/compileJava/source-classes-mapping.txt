@@ -10,5 +10,8 @@ quantity/QuantityType.java
  quantity.QuantityType
  quantity.QuantityType$Length
  quantity.QuantityType$Mass
+ quantity.QuantityType$Temperature
 quantity/Length.java
  quantity.Length
+quantity/Temperature.java
+ quantity.Temperature

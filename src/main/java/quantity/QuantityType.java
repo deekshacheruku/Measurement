@@ -11,4 +11,10 @@ public class QuantityType {
         GRAM,
         KILOGRAM
     }
+
+    public enum Temperature {
+        CELSIUS,
+        KELVIN,
+        FAHRENHEIT
+    }
 }

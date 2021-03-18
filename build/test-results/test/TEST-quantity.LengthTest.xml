@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="quantity.LengthTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-18T11:52:48" hostname="DEEKSHAREDDY" time="0.064">
-  <properties/>
-  <testcase name="testIs1CentimeterNotEquals2Centimeter()" classname="quantity.LengthTest" time="0.064"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
