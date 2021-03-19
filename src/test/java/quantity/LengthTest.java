@@ -33,98 +33,98 @@ public class LengthTest {
 
     @Test
     void testIf1MeterEquals100Centimeter() throws InValidQuantityValueException {
-        Length oneMeter = new Length(1, QuantityType.Length.METER);
-        Length hundredCentimeter = new Length(100, QuantityType.Length.CENTIMETER);
+        Length meter1 = new Length(1, QuantityType.Length.METER);
+        Length centimeter100 = new Length(100, QuantityType.Length.CENTIMETER);
 
-        assertEquals(hundredCentimeter, oneMeter);
+        assertEquals(centimeter100, meter1);
     }
 
     @Test
     void testIf2MetersNotEquals100Centimeter() throws InValidQuantityValueException {
-        Length twoMeters = new Length(2, QuantityType.Length.METER);
-        Length hundredCentimeter = new Length(100, QuantityType.Length.CENTIMETER);
+        Length meters2 = new Length(2, QuantityType.Length.METER);
+        Length centimeter100 = new Length(100, QuantityType.Length.CENTIMETER);
 
-        assertNotEquals(hundredCentimeter, twoMeters);
+        assertNotEquals(centimeter100, meters2);
     }
 
     @Test
     void test100CentimeterEquals0_001Kilometer() throws InValidQuantityValueException {
-        Length hundredCentimeters = new Length(100, QuantityType.Length.CENTIMETER);
+        Length centimeters100 = new Length(100, QuantityType.Length.CENTIMETER);
         Length kilometers0_001 = new Length(0.001, QuantityType.Length.KILOMETER);
 
-        assertEquals(kilometers0_001, hundredCentimeters);
+        assertEquals(kilometers0_001, centimeters100);
     }
 
     @Test
     void test1000CentimeterNotEquals0_001Kilometer() throws InValidQuantityValueException {
         Length kilometer0_001 = new Length(0.001, QuantityType.Length.KILOMETER);
-        Length thousandCentimeter = new Length(1000, QuantityType.Length.CENTIMETER);
+        Length centimeter1000 = new Length(1000, QuantityType.Length.CENTIMETER);
 
-        assertNotEquals(kilometer0_001, thousandCentimeter);
+        assertNotEquals(kilometer0_001, centimeter1000);
     }
 
     @Test
     void testIfAdditionOf1MeterAnd100CentimeterEquals2Meter() throws InValidQuantityValueException {
-        Length oneMeter = new Length(1, QuantityType.Length.METER);
-        Length hundredCentimeter = new Length(100, QuantityType.Length.CENTIMETER);
+        Length meter1 = new Length(1, QuantityType.Length.METER);
+        Length centimeter100 = new Length(100, QuantityType.Length.CENTIMETER);
         Length expectedSum = new Length(2, QuantityType.Length.METER);
 
-        Length actualSum = oneMeter.add(hundredCentimeter);
+        Length actualSum = meter1.add(centimeter100);
 
         assertEquals(expectedSum, actualSum);
     }
 
     @Test
     void testIfAdditionOf200CentimeterAnd1KilometerEquals1002Meter() throws InValidQuantityValueException {
-        Length twoHundredCentimeter = new Length(200, QuantityType.Length.CENTIMETER);
-        Length oneKilometer = new Length(1, QuantityType.Length.KILOMETER);
+        Length centimeter200 = new Length(200, QuantityType.Length.CENTIMETER);
+        Length kilometer1 = new Length(1, QuantityType.Length.KILOMETER);
         Length expectedSum = new Length(1002, QuantityType.Length.METER);
 
-        Length actualSum = twoHundredCentimeter.add(oneKilometer);
+        Length actualSum = centimeter200.add(kilometer1);
 
         assertEquals(expectedSum, actualSum);
     }
 
     @Test
     void testIfAdditionOf1MeterAnd100CentimeterNotEquals1Meter() throws InValidQuantityValueException {
-        Length oneMeter = new Length(1, QuantityType.Length.METER);
-        Length hundredCentimeter = new Length(100, QuantityType.Length.CENTIMETER);
+        Length meter1 = new Length(1, QuantityType.Length.METER);
+        Length centimeter100 = new Length(100, QuantityType.Length.CENTIMETER);
         Length expectedSum = new Length(1, QuantityType.Length.METER);
 
-        Length actualSum = oneMeter.add(hundredCentimeter);
+        Length actualSum = meter1.add(centimeter100);
 
         assertNotEquals(expectedSum, actualSum);
     }
 
     @Test
     void testIfSubtractionOf1MeterAnd50CentimeterEquals0_5Meter() throws InValidQuantityValueException, NegativeSubtractionException {
-        Length oneMeter = new Length(1, QuantityType.Length.METER);
+        Length meter1 = new Length(1, QuantityType.Length.METER);
         Length centimeter0_5 = new Length(50, QuantityType.Length.CENTIMETER);
         Length expectedDifference = new Length(0.5, QuantityType.Length.METER);
 
-        Length actualDifference = oneMeter.subtract(centimeter0_5);
+        Length actualDifference = meter1.subtract(centimeter0_5);
 
         assertEquals(expectedDifference, actualDifference);
     }
 
     @Test
     void testIfSubtractionOf2000CentimeterAnd1MeterEquals19Meter() throws InValidQuantityValueException, NegativeSubtractionException {
-        Length twoThousandCentimeter = new Length(2000, QuantityType.Length.CENTIMETER);
-        Length oneMeter = new Length(1, QuantityType.Length.METER);
+        Length centimeter2000 = new Length(2000, QuantityType.Length.CENTIMETER);
+        Length meter1 = new Length(1, QuantityType.Length.METER);
         Length expectedDifference = new Length(19, QuantityType.Length.METER);
 
-        Length actualDifference = twoThousandCentimeter.subtract(oneMeter);
+        Length actualDifference = centimeter2000.subtract(meter1);
 
         assertEquals(expectedDifference, actualDifference);
     }
 
     @Test
     void testIfSubtractionOf3MeterAnd100CentimeterNotEquals1Meter() throws InValidQuantityValueException, NegativeSubtractionException {
-        Length threeMeter = new Length(3, QuantityType.Length.METER);
-        Length hundredCentimeter = new Length(100, QuantityType.Length.CENTIMETER);
+        Length meter3 = new Length(3, QuantityType.Length.METER);
+        Length centimeter100 = new Length(100, QuantityType.Length.CENTIMETER);
         Length expectedDifference = new Length(1, QuantityType.Length.METER);
 
-        Length actualDifference = threeMeter.subtract(hundredCentimeter);
+        Length actualDifference = meter3.subtract(centimeter100);
 
         assertNotEquals(expectedDifference, actualDifference);
     }

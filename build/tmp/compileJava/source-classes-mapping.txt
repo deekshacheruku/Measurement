@@ -2,16 +2,16 @@ quantity/NegativeSubtractionException.java
  quantity.NegativeSubtractionException
 quantity/InValidQuantityValueException.java
  quantity.InValidQuantityValueException
-quantity/Quantity.java
- quantity.Quantity
-quantity/Mass.java
- quantity.Mass
+quantity/Temperature.java
+ quantity.Temperature
 quantity/QuantityType.java
  quantity.QuantityType
  quantity.QuantityType$Length
  quantity.QuantityType$Mass
  quantity.QuantityType$Temperature
+quantity/Quantity.java
+ quantity.Quantity
+quantity/Mass.java
+ quantity.Mass
 quantity/Length.java
  quantity.Length
-quantity/Temperature.java
- quantity.Temperature
