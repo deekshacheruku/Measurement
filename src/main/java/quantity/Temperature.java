@@ -1,27 +1,30 @@
 package quantity;
 
-public class Temperature {
-    private final double value;
-    private final QuantityType.TemperatureType temperatureType;
+public class Temperature extends Measurement<Temperature> {
+    public enum TemperatureType implements Type {
+        CELSIUS(0, 1),
+        KELVIN(273.15, 1),
+        FAHRENHEIT(32, 0.55);
 
-    public Temperature(double value, QuantityType.TemperatureType temperatureType) {
-        this.value = value;
-        this.temperatureType = temperatureType;
+        private final double multiplicationFactor;
+        private final double subtractionFactor;
+
+        TemperatureType(double subtractionFactor, double multiplicationFactor) {
+            this.subtractionFactor = subtractionFactor;
+            this.multiplicationFactor = multiplicationFactor;
+        }
+
+        public double getSubtractionFactor() {
+            return this.subtractionFactor;
+        }
+
+        public double getMultiplicationFactor() {
+            return this.multiplicationFactor;
+        }
+
     }
 
-    private double convertTemperatureValueIntoCelsius(Temperature temperature){
-        if(temperature.temperatureType.name().equals("FAHRENHEIT"))
-            return ((temperature.value - 32)*5)/9;
-        else if (temperature.temperatureType.name().equals("KELVIN"))
-            return temperature.value - 273.15;
-        return temperature.value;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Temperature temperature = (Temperature) o;
-        return convertTemperatureValueIntoCelsius(this) == convertTemperatureValueIntoCelsius(temperature);
+    public Temperature(double value, TemperatureType temperatureType) {
+        super(value, temperatureType);
     }
 }
