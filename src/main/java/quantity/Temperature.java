@@ -2,9 +2,9 @@ package quantity;
 
 public class Temperature {
     private final double value;
-    private final QuantityType.Temperature temperatureType;
+    private final QuantityType.TemperatureType temperatureType;
 
-    public Temperature(double value, QuantityType.Temperature temperatureType) {
+    public Temperature(double value, QuantityType.TemperatureType temperatureType) {
         this.value = value;
         this.temperatureType = temperatureType;
     }

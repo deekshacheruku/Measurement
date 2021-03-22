@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="quantity.TemperatureTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-03-19T04:51:55" hostname="DEEKSHAREDDY" time="0.093">
+<testsuite name="quantity.TemperatureTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-03-22T06:15:25" hostname="DEEKSHAREDDY" time="0.068">
   <properties/>
-  <testcase name="testIf0CelsiusEquals273_15Kelvin()" classname="quantity.TemperatureTest" time="0.073"/>
-  <testcase name="testIf1CelsiusNotEquals273Kelvin()" classname="quantity.TemperatureTest" time="0.011"/>
-  <testcase name="testIf0CelsiusEquals32Fahrenheit()" classname="quantity.TemperatureTest" time="0.001"/>
+  <testcase name="testIf0CelsiusEquals273_15Kelvin()" classname="quantity.TemperatureTest" time="0.056"/>
+  <testcase name="testIf1CelsiusNotEquals273Kelvin()" classname="quantity.TemperatureTest" time="0.004"/>
+  <testcase name="testIf0CelsiusEquals32Fahrenheit()" classname="quantity.TemperatureTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
