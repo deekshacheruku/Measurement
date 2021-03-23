@@ -16,8 +16,8 @@ public class Measurement<T extends Measurement> {
         this.type = type;
     }
 
-    double convertQuantityIntoSIUnit(T quantity) {
-        return (quantity.value - quantity.type.getSubtractionFactor()) * quantity.type.getMultiplicationFactor();
+    double convertQuantityIntoSIUnit() {
+        return (value - type.getSubtractionFactor()) * type.getMultiplicationFactor();
     }
 
     @Override
@@ -26,6 +26,6 @@ public class Measurement<T extends Measurement> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         T quantity = (T) o;
-        return convertQuantityIntoSIUnit((T) this) == convertQuantityIntoSIUnit(quantity);
+        return this.convertQuantityIntoSIUnit() == quantity.convertQuantityIntoSIUnit();
     }
 }

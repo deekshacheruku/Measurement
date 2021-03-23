@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="quantity.LengthTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2021-03-23T09:54:33" hostname="DEEKSHAREDDY" time="0.357">
+  <properties/>
+  <testcase name="testIf1MeterEquals100Centimeter()" classname="quantity.LengthTest" time="0.103"/>
+  <testcase name="testThrowsExceptionWhenQuantityValueIsNegative()" classname="quantity.LengthTest" time="0.012"/>
+  <testcase name="testThrowsExceptionWhenQuantityValueIsZero()" classname="quantity.LengthTest" time="0.005"/>
+  <testcase name="testIfAdditionOf1MeterAnd100CentimeterNotEquals1Meter()" classname="quantity.LengthTest" time="0.014"/>
+  <testcase name="testIfAdditionOf1MeterAnd100CentimeterEquals2Meter()" classname="quantity.LengthTest" time="0.015"/>
+  <testcase name="testThrowsExceptionIfGreaterQuantitySubtractedFromSmallerQuantity()" classname="quantity.LengthTest" time="0.005"/>
+  <testcase name="testIf2MetersNotEquals100Centimeter()" classname="quantity.LengthTest" time="0.018"/>
+  <testcase name="test1000CentimeterNotEquals0_001Kilometer()" classname="quantity.LengthTest" time="0.009"/>
+  <testcase name="testIfAdditionOf200CentimeterAnd1KilometerEquals1002Meter()" classname="quantity.LengthTest" time="0.012"/>
+  <testcase name="testIs1CentimeterNotEquals2Centimeter()" classname="quantity.LengthTest" time="0.012"/>
+  <testcase name="test100CentimeterEquals0_001Kilometer()" classname="quantity.LengthTest" time="0.035"/>
+  <testcase name="testIs1CentimeterEquals1Centimeter()" classname="quantity.LengthTest" time="0.005"/>
+  <testcase name="testIfSubtractionOf3MeterAnd100CentimeterNotEquals1Meter()" classname="quantity.LengthTest" time="0.002"/>
+  <testcase name="testIfSubtractionOf2000CentimeterAnd1MeterEquals19Meter()" classname="quantity.LengthTest" time="0.002"/>
+  <testcase name="testIfSubtractionOf1MeterAnd50CentimeterEquals0_5Meter()" classname="quantity.LengthTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

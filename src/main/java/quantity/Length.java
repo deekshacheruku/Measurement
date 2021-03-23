@@ -30,7 +30,7 @@ public class Length extends ScalarMeasurement<Length> {
         this.lengthName = lengthName;
     }
 
-    public Length createObject(double value) throws InValidQuantityValueException {
+    protected Length createObject(double value) throws InValidQuantityValueException {
         return new Length(value, LengthType.METER);
     }
 }

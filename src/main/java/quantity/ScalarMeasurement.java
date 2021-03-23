@@ -13,13 +13,13 @@ public abstract class ScalarMeasurement<T extends ScalarMeasurement> extends Mea
 
     @SuppressWarnings({"unchecked"})
     public T add(T quantity) throws InValidQuantityValueException {
-        return createObject(convertQuantityIntoSIUnit((T) this) + convertQuantityIntoSIUnit(quantity));
+        return createObject(this.convertQuantityIntoSIUnit() + quantity.convertQuantityIntoSIUnit());
     }
 
     @SuppressWarnings({"unchecked"})
     public T subtract(T quantity) throws NegativeSubtractionException, InValidQuantityValueException {
-        double firstDifference = convertQuantityIntoSIUnit((T) this);
-        double secondDifference = convertQuantityIntoSIUnit(quantity);
+        double firstDifference = this.convertQuantityIntoSIUnit();
+        double secondDifference = quantity.convertQuantityIntoSIUnit();
         if (firstDifference < secondDifference)
             throw new NegativeSubtractionException("Greater Quantity can't be subtracted from smaller Quantity");
         return createObject(firstDifference - secondDifference);
